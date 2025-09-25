@@ -1,3 +1,4 @@
+// Import libraries from Java
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -12,6 +13,99 @@ public class Menu {
 
     // Stores the current result of calculations
     private double currentValue = 0.0;
+
+    // Operations object to handle all calculations
+    private Operations operations;
+
+    /**
+     * Constructor to initialize Menu components
+     */
+    public Menu() {
+        operations = new Operations();
+    }
+
+    /**
+     * Gets numbers from user input using Scanner object for reading input
+     * Return an Array of numbers entered by user
+     */
+    private double[] getNumbers(Scanner scanner) {
+
+        System.out.println();
+        System.out.print("How many numbers? ");
+
+        // Initialize our counter with an invalid value
+        int count = -1;
+
+        // Loop until the user inputs a valid positive number
+        while (count <= 0) {
+
+            // Attempt to read integer from user
+            try {
+
+                count = scanner.nextInt();
+
+                // Check if the number is positive
+                if (count <= 0) {
+
+                    System.out.println();
+                    System.out.print("Please enter a positive number: ");
+                }
+
+
+            } catch (InputMismatchException e) { // Handle non-integer input
+
+                // Clear bad input
+                scanner.nextLine();
+
+                System.out.println();
+                System.out.print("Invalid input! Please enter a number: ");
+            }
+        }
+
+        // Clear buffer after reading int
+        scanner.nextLine();
+
+        // Create an array to store all numbers
+        double[] numbers = new double[count];
+
+        // Collect each number from the user
+        for(int i = 0; i < count; i++) {
+
+            System.out.println();
+            System.out.print("Enter number " + (i+1) + ": ");
+
+            // Track if a valid input has been received
+            boolean validInput = false;
+
+            // Loop through until valid number is entered
+            while (!validInput) {
+
+                // Try to get a valid number input
+                try {
+
+                    // Attempt to read double from user
+                    numbers[i] = scanner.nextDouble();
+
+                    // Mark as successful
+                    validInput = true;
+
+                } catch (InputMismatchException e) { // Handle invalid input (when it isn't a number)
+
+                    // Clear the invalid input
+                    scanner.nextLine();
+
+                    System.out.println();
+                    System.out.println("Invalid number! Please enter a valid number.");
+                    System.out.println();
+
+                    System.out.print("Enter number " + (i+1) + ": ");
+                }
+            }
+        }
+
+        // Return array of numbers
+        return numbers;
+    }
 
     /**
      * Displays the calculator menu with formatting and color styling
@@ -39,13 +133,13 @@ public class Menu {
      */
     public void displayMenu() {
 
-        // Create a new Scanner object to read input from user
+        // Create a new Scanner object to read input
         Scanner scanner = new Scanner(System.in);
 
         // Condition for our loop
         boolean isRunning = true;
 
-        // Main menu loop that runs until user exits
+        // Main menu loop that runs until the user exits
         while (isRunning) {
 
             // Show the menu
@@ -70,11 +164,31 @@ public class Menu {
             switch (choice) {
                 case 1:
                     System.out.println("Addition selected");
+
+                    // Collect an array of numbers from the user input
+                    double[] addNumbers = getNumbers(scanner);
+
+                    // Call our Add method from the Operations class and store the result
+                    currentValue = operations.add(addNumbers);
+
+                    // Format and display result with 2 decimals
+                    System.out.println();
+                    System.out.printf("Result: %.2f\n", currentValue);
                     System.out.println();
                     break;
 
                 case 2:
                     System.out.println("Subtraction selected");
+
+                    // Collect an array of numbers from the user input
+                    double[] subNumbers = getNumbers(scanner);
+
+                    // Call our Subtract method from the Operations class and store the result
+                    currentValue = operations.subtract(subNumbers);
+
+                    // Format and display result with 2 decimals
+                    System.out.println();
+                    System.out.printf("Result: %.2f\n", currentValue);
                     System.out.println();
                     break;
 
