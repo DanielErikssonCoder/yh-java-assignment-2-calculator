@@ -25,8 +25,8 @@ public class Menu {
     }
 
     /**
-     * Gets numbers from user input using Scanner object for reading input
-     * Return an Array of numbers entered by user
+     * @param scanner Scanner object for reading user input
+     * @return Array of double values entered by the user
      */
     private double[] getNumbers(Scanner scanner) {
 
