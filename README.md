@@ -49,7 +49,7 @@ I interpreted the assignment as logical feature blocks instead of one branch per
 - `feature/addition-subtraction` - Two simple operations
 - `feature/multiplication-division` - Two more complex ones
 - `feature/modulus` - Remainder separate
-- `feature/multi-numbers` - UI improvements
+- `feature/multi-numbers` - UI improvements and functionality
 
 All branches are merged to master. Exceeds the requirement of at least 4 branches.
 
