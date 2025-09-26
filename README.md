@@ -30,17 +30,13 @@ That's why the calculator has support for unlimited numbers from the beginning.
 - Robust error handling that prevents crashes
 
 ## Project structure
-
+```
 src/
-
-├── Main.java           // Starts the program
-
-├── Calculator.java     // Coordinates between Menu and Operations
-
-├── Menu.java          // All UI and user interaction
-
-└── Operations.java   // Mathematical logic
-
+├── Main.java           # Starts the program
+├── Calculator.java     # Coordinates between Menu and Operations
+├── Menu.java           # All UI and user interaction
+└── Operations.java     # Mathematical logic
+```
 Chose 4 classes for separation of concerns where each class has a clear responsibility. 
 
 Could have thrown everything in Main but that shows no understanding of OOP.
