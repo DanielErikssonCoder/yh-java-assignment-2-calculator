@@ -1,3 +1,7 @@
+/**
+ * Calculator class that coordinates the application
+ * Acts as the controller between Menu and Operations
+ */
 public class Calculator {
 
     // Private instance variable to handle menu interactions
@@ -10,7 +14,10 @@ public class Calculator {
         menu = new Menu();
     }
 
-    // Main method that starts our program
+    /**
+     * Main run method that starts the calculator
+     * Called by the Main class to run the program
+     */
     public void run() {
 
         // Display the calculator menu

@@ -1,4 +1,4 @@
-// Import libraries from Java
+// Import libraries from Java for error handling and reading user input
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -41,7 +41,6 @@ public class Menu {
 
             // Attempt to read integer from user
             try {
-
                 count = scanner.nextInt();
 
                 // Check if the number is positive
@@ -82,8 +81,6 @@ public class Menu {
 
                 // Try to get a valid number input
                 try {
-
-                    // Attempt to read double from user
                     numbers[i] = scanner.nextDouble();
 
                     // Mark as successful
@@ -102,7 +99,6 @@ public class Menu {
                 }
             }
         }
-
         // Return array of numbers
         return numbers;
     }
@@ -194,11 +190,31 @@ public class Menu {
 
                 case 3:
                     System.out.println("Multiplication selected");
+
+                    // Collect an array of numbers from the user input
+                    double[] multNumbers = getNumbers(scanner);
+
+                    // Call our multiply method from the Operations class and store the result
+                    currentValue = operations.multiply(multNumbers);
+
+                    // Format and display result with 2 decimals
+                    System.out.println();
+                    System.out.printf("Result: %.2f\n", currentValue);
                     System.out.println();
                     break;
 
                 case 4:
                     System.out.println("Division selected");
+
+                    // Collect an array of numbers from the user input
+                    double[] divNumbers = getNumbers(scanner);
+
+                    // Call our Divide method from the Operations class and store the result
+                    currentValue = operations.divide(divNumbers);
+
+                    // Format and display result with 2 decimals
+                    System.out.println();
+                    System.out.printf("Result: %.2f\n", currentValue);
                     System.out.println();
                     break;
 
