@@ -5,7 +5,7 @@
 public class Calculator {
 
     // Private instance variable to handle menu interactions
-    private Menu menu;
+    private final Menu menu;
 
     // Constructor that initializes the Calculator object
     public Calculator() {
