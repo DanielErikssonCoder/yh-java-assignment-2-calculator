@@ -10,6 +10,5 @@ public class Main {
 
         // Start the program through the run Method
         calculator.run();
-
     }
 }

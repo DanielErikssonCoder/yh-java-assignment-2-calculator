@@ -96,4 +96,35 @@ public class Operations {
         // Return the division result
         return result;
     }
+
+    /**
+     * Perform modulus on an array of numbers
+     * @param numbers Array where first is dividend, rest are divisors
+     * @return Remainder after modulus
+     */
+    public double modulus (double[] numbers) {
+
+        // Start with the first number
+        double result = numbers[0];
+
+        // Loop from the second index (skip the first)
+        for (int i = 1; i < numbers.length; i++) {
+
+            // Check for modulus by zero
+            if (numbers[i] == 0) {
+
+                System.out.println();
+                System.out.println("Cannot calculate remainder with zero!");
+
+                // Return the original dividend unchanged
+                return numbers[0];
+            }
+
+            // Calculate remainder for each number
+            result = result % numbers[i];
+        }
+
+        // Return the remainder result
+        return result;
+    }
 }

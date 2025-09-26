@@ -220,6 +220,16 @@ public class Menu {
 
                 case 5:
                     System.out.println("Remainder selected");
+
+                    // Collect an array of numbers from the user input
+                    double[] modNumbers = getNumbers(scanner);
+
+                    // Call our Modulus method from the Operations class and store the result
+                    currentValue = operations.modulus(modNumbers);
+
+                    // Format and display result with 2 decimals
+                    System.out.println();
+                    System.out.printf("Result: %.2f\n", currentValue);
                     System.out.println();
                     break;
 
