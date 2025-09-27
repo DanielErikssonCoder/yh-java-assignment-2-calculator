@@ -419,9 +419,6 @@ public class Menu {
                     // Call our Divide method from the Operations class and store the result
                     currentValue = operations.divide(divNumbers);
 
-                    // Clear screen
-                    clearScreen();
-
                     // Format and display result with 2 decimals
                     System.out.println();
                     System.out.printf("Result: %.2f\n", currentValue);
@@ -446,9 +443,6 @@ public class Menu {
 
                     // Call our Modulus method from the Operations class and store the result
                     currentValue = operations.modulus(modNumbers);
-
-                    // Clear screen
-                    clearScreen();
 
                     // Format and display result with 2 decimals
                     System.out.println();
