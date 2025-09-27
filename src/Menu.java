@@ -339,7 +339,6 @@ public class Menu {
                     clearScreen();
 
                     // Format and display result with 2 decimals
-                    System.out.println();
                     System.out.printf("Result: %.2f\n", currentValue);
 
                     // Wait for the user to hit Enter
@@ -367,7 +366,6 @@ public class Menu {
                     clearScreen();
 
                     // Format and display result with 2 decimals
-                    System.out.println();
                     System.out.printf("Result: %.2f\n", currentValue);
 
                     // Wait for the user to hit Enter
@@ -395,7 +393,6 @@ public class Menu {
                     clearScreen();
 
                     // Format and display result with 2 decimals
-                    System.out.println();
                     System.out.printf("Result: %.2f\n", currentValue);
 
                     // Wait for the user to hit Enter
@@ -416,11 +413,13 @@ public class Menu {
                     // Collect an array of numbers from the user input
                     double[] divNumbers = getNumbers(scanner);
 
+                    // Clear screen
+                    clearScreen();
+
                     // Call our Divide method from the Operations class and store the result
                     currentValue = operations.divide(divNumbers);
 
                     // Format and display result with 2 decimals
-                    System.out.println();
                     System.out.printf("Result: %.2f\n", currentValue);
 
                     // Wait for the user to hit Enter
@@ -441,11 +440,13 @@ public class Menu {
                     // Collect an array of numbers from the user input
                     double[] modNumbers = getNumbers(scanner);
 
+                    // Clear screen
+                    clearScreen();
+
                     // Call our Modulus method from the Operations class and store the result
                     currentValue = operations.modulus(modNumbers);
 
                     // Format and display result with 2 decimals
-                    System.out.println();
                     System.out.printf("Result: %.2f\n", currentValue);
 
                     // Wait for the user to hit Enter

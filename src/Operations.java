@@ -82,8 +82,8 @@ public class Operations {
             // Check for division by zero
             if (numbers[i] == 0) {
 
-                System.out.println();
                 System.out.println("Cannot divide by zero!");
+                System.out.println();
 
                 // Return the original dividend unchanged
                 return numbers[0];
@@ -113,8 +113,8 @@ public class Operations {
             // Check for modulus by zero
             if (numbers[i] == 0) {
 
-                System.out.println();
                 System.out.println("Cannot calculate remainder with zero!");
+                System.out.println();
 
                 // Return the original dividend unchanged
                 return numbers[0];
